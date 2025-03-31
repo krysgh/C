@@ -114,7 +114,7 @@ void isPalindrome(Stack *p, char text[]){
     for (int i = 0; text[i] != '\0'; i++) {
         
         if (isalnum(text[i])) {
-            push(p, text[i], 1); 
+            push(p, toupper(text[i]), 1); 
         }
     }
     
@@ -124,7 +124,7 @@ void isPalindrome(Stack *p, char text[]){
         
         if (isalnum(text[i])) {
             
-            if (text[i] != pop(p, 1)) {
+            if (toupper(text[i]) != pop(p, 1)) {
                 puts("The text is not a palindrome.");
                 exit(1);
             }
